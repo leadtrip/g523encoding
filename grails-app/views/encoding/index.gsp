@@ -1,3 +1,4 @@
+<%@ page import="grails.converters.JSON" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -16,13 +17,13 @@
                 logIt("${aStringMap}");
                 logIt("${aStringMap.encodeAsJSON()}");
                 logIt("${raw(aStringMap)}");
-                logIt(${raw((aStringMap as grails.converters.JSON) as java.lang.String)});
+                logIt(${raw((aStringMap as JSON) as String)});         // probably what's wanted
                 logIt("${aStringMap.encodeAsRaw()}")
 
                 logIt("${anIntegerMap}");
                 logIt("${anIntegerMap.encodeAsJSON()}");
                 logIt("${raw(anIntegerMap)}");
-                logIt(${raw((anIntegerMap as grails.converters.JSON) as java.lang.String)});
+                logIt(${raw((anIntegerMap as JSON) as String)});       // probably what's wanted
             });
         });
     </g:javascript>
@@ -39,6 +40,6 @@
     ${anIntegerMap}
 
     <br>
-    <mw:encodeSomething aString="fungus" aMap="[tree: 92]"/>
+    <mw:encodeSomething aString="fungus" aMap="[tree: 92, 1902: 'banana']"/>
 </body>
 </html>

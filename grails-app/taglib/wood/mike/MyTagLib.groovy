@@ -4,7 +4,7 @@ import grails.gsp.PageRenderer
 
 class MyTagLib {
     static namespace = "mw"
-    static defaultEncodeAs = [taglib:'html']
+    //static defaultEncodeAs = [taglib:'html']
     //static encodeAsForTags = [tagName: [taglib:'html'], otherTagName: [taglib:'none']]
 
     PageRenderer groovyPageRenderer
